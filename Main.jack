@@ -1,0 +1,178 @@
+class Main {
+    function void main() {
+        var int letter0;
+        var int letter1;
+        var int letter2;
+        var int letter3;
+        var int letter4;
+
+        var int guess0;
+        var int guess1;
+        var int guess2;
+        var int guess3;
+        var int guess4;
+
+        var int round;
+        var int isReading;
+        var int k;
+
+        // Word: GATES
+        let letter0 = 71;
+        let letter1 = 65;
+        let letter2 = 84;
+        let letter3 = 69;
+        let letter4 = 83;
+
+        do Output.printString("Wordle Game:");
+        do Output.println();
+        do Output.printString("6 Guesses");
+        do Output.println();
+        do Output.printString("(Yellow Letter) - Present but in the Wrong Place");
+        do Output.println();
+        do Output.printString("[Green Letter] - Present in the Right Place");
+        do Output.println();
+        do Output.println();
+
+        let round = 1;
+
+        while (round < 7) {
+            do Output.printString("Guess ");
+            do Output.printInt(round);
+            do Output.printString(": ");
+
+            let isReading = 1;
+            while (isReading = 1) {
+                let k = Keyboard.keyPressed();
+                if (k) {
+                    let k = k - 32;
+                    let guess0 = k;
+                    do Output.printChar(guess0);
+                    let isReading = 0;
+                }
+            }
+
+            let isReading = 1;
+            while (isReading = 1) {
+                let k = Keyboard.keyPressed();
+                if (k) {
+                    let k = k - 32;
+                    let guess1 = k;
+                    do Output.printChar(guess1);
+                    let isReading = 0;
+                }
+            }
+
+            let isReading = 1;
+            while (isReading = 1) {
+                let k = Keyboard.keyPressed();
+                if (k) {
+                    let k = k - 32;
+                    let guess2 = k;
+                    do Output.printChar(guess2);
+                    let isReading = 0;
+                }
+            }
+
+            let isReading = 1;
+            while (isReading = 1) {
+                let k = Keyboard.keyPressed();
+                if (k) {
+                    let k = k - 32;
+                    let guess3 = k;
+                    do Output.printChar(guess3);
+                    let isReading = 0;
+                }
+            }
+
+            let isReading = 1;
+            while (isReading = 1) {
+                let k = Keyboard.keyPressed();
+                if (k) {
+                    let k = k - 32;
+                    let guess4 = k;
+                    do Output.printChar(guess4);
+                    let isReading = 0;
+                }
+            }
+
+            do Output.println();
+
+            if ((guess0 = letter0) & (guess1 = letter1) & (guess2 = letter2) & (guess3 = letter3) & (guess4 = letter4)) {
+                do Output.printString("You Won!");
+                do Output.println();
+                return;
+            }
+
+            if (round = 6) {
+                do Output.printString("You Lost! Answer: GATES");
+                return;
+            }
+
+            if (guess0 = letter0) {
+                do Output.printChar(91); do Output.printChar(guess0); do Output.printChar(93);
+            } else {
+                if ((guess0 = letter1) | (guess0 = letter2) | (guess0 = letter3) | (guess0 = letter4)) {
+                    do Output.printChar(40); do Output.printChar(guess0); do Output.printChar(41);
+                } else {
+                    do Output.printChar(guess0);
+                }
+            }
+
+            do Output.printChar(32); // space
+
+            if (guess1 = letter1) {
+                do Output.printChar(91); do Output.printChar(guess1); do Output.printChar(93);
+            } else {
+                if ((guess1 = letter0) | (guess1 = letter2) | (guess1 = letter3) | (guess1 = letter4)) {
+                    do Output.printChar(40); do Output.printChar(guess1); do Output.printChar(41);
+                } else {
+                    do Output.printChar(guess1);
+                }
+            }
+
+            do Output.printChar(32); // space
+
+            if (guess2 = letter2) {
+                do Output.printChar(91); do Output.printChar(guess2); do Output.printChar(93);
+            } else {
+                if ((guess2 = letter0) | (guess2 = letter1) | (guess2 = letter3) | (guess2 = letter4)) {
+                    do Output.printChar(40); do Output.printChar(guess2); do Output.printChar(41);
+                } else {
+                    do Output.printChar(guess2);
+                }
+            }
+
+            do Output.printChar(32); // space
+
+            if (guess3 = letter3) {
+                do Output.printChar(91); do Output.printChar(guess3); do Output.printChar(93);
+            } else {
+                if ((guess3 = letter0) | (guess3 = letter1) | (guess3 = letter2) | (guess3 = letter4)) {
+                    do Output.printChar(40); do Output.printChar(guess3); do Output.printChar(41);
+                } else {
+                    do Output.printChar(guess3);
+                }
+            }
+
+            do Output.printChar(32); // space
+
+            if (guess4 = letter4) {
+                do Output.printChar(91); do Output.printChar(guess4); do Output.printChar(93);
+            } else {
+                if ((guess4 = letter0) | (guess4 = letter1) | (guess4 = letter2) | (guess4 = letter3)) {
+                    do Output.printChar(40); do Output.printChar(guess4); do Output.printChar(41);
+                } else {
+                    do Output.printChar(guess4);
+                }
+            }
+
+            do Output.println();
+            do Output.println();
+
+            let round = round + 1;
+        }
+
+        do Output.printString("You Lost! Answer: GATES");
+        return;
+    }
+}
